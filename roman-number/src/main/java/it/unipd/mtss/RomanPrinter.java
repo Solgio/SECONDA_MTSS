@@ -8,7 +8,32 @@ public class RomanPrinter {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
     private static String printAsciiArt(String romanNumber){
-        //TODO
-        return null;
+        StringBuilder asciiArt = new StringBuilder();
+        switch (romanNumber) {
+            case "I":
+                asciiArt.append("  ___ \n");
+                asciiArt.append(" |_ _|\n");
+                asciiArt.append("  | | \n");
+                asciiArt.append("  | | \n");
+                asciiArt.append(" |___|\n");
+                break;
+            case "II":
+                asciiArt.append("  ___   ___ \n");
+                asciiArt.append(" |_ _| |_ _|\n");
+                asciiArt.append("  | |   | | \n");
+                asciiArt.append("  | |   | | \n");
+                asciiArt.append(" |___| |___|\n");
+                break;
+            case "III":
+                asciiArt.append("  ___   ___   ___ \n");
+                asciiArt.append(" |_ _| |_ _| |_ _|\n");
+                asciiArt.append("  | |   | |   | | \n");
+                asciiArt.append("  | |   | |   | | \n");
+                asciiArt.append(" |___| |___| |___|\n");
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid Roman numeral: " + romanNumber);
+        }
+        return asciiArt.toString();
     }
-    }
+}

@@ -1,6 +1,7 @@
 package it.unipd.mtss;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -56,5 +57,11 @@ public class RomanPrinterTest {
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsGreaterThan4() {
         RomanPrinter.print(4);
+    }
+
+     @Test
+    public void testConstructor() {
+        RomanPrinter printer = new RomanPrinter();
+        assertNotNull(printer);
     }
 }
