@@ -15,12 +15,12 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-            // I              V            X            L 
-            {"  ___ ", " __     __", " __    __", "  _     "},
-            {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    "},
-            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    "},
-            {"  | | ", "   \\ V /  ", "  / /\\ \\ ", " | |___ "},
-            {" |___|", "    \\_/   ", " /_/  \\_\\", " |_____|"},
+                // I              V            X            L         C
+                {"  ___ ", " __     __", " __    __", "  _     ", "   ____ "},
+                {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    ", "  / ___|"},
+                {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    ", " | |    "},
+                {"  | | ", "   \\ V /  ", "  / /\\ \\ ", " | |___ ", " | |___ "},
+                {" |___|", "    \\_/   ", " /_/  \\_\\", " |_____|", "  \\____|"},
         };
 
         for (int i = 0; i < 5; i++) {
@@ -33,6 +33,8 @@ public class RomanPrinter {
                     asciiArt.append(ascii[i][2]);
                 } else if (r == 'L') {
                     asciiArt.append(ascii[i][3]);
+                } else if (r == 'C') {
+                    asciiArt.append(ascii[i][4]);
                 }
             }
             asciiArt.append("\n");
