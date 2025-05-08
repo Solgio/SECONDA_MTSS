@@ -11,19 +11,23 @@ import org.junit.Rule;
 
 public class IntegerToRomanTest {
     @Test
-    public void testConvertfirst6() {
+    public void testConvertfirst10() {
         IntegerToRoman R=new IntegerToRoman();
         //ARRANGE
-       String[] expectedOutcome = new String[6];
-       expectedOutcome[0] = "I";
-       expectedOutcome[1] = "II";
-       expectedOutcome[2] = "III";
-       expectedOutcome[3] = "IV";
-       expectedOutcome[4] = "V";
-       expectedOutcome[5] = "VI";
+       String[] expectedOutcome = new String[10];
+        expectedOutcome[0] = "I";
+        expectedOutcome[1] = "II";
+        expectedOutcome[2] = "III";
+        expectedOutcome[3] = "IV";
+        expectedOutcome[4] = "V";
+        expectedOutcome[5] = "VI";
+        expectedOutcome[6] = "VII";
+        expectedOutcome[7] = "VIII";
+        expectedOutcome[8] = "IX";
+        expectedOutcome[9] = "X";
         //ACT
-         String[] actualOutcome = new String[6];
-         for (int i = 0; i < 6; i++) {
+         String[] actualOutcome = new String[10];
+         for (int i = 0; i < 10; i++) {
               actualOutcome[i] = R.convert(i + 1);
         //ASSERT
             assertEquals(expectedOutcome[i], actualOutcome[i]);
@@ -36,21 +40,21 @@ public class IntegerToRomanTest {
     @Test
     public void testConvertWithZero() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 6");
+        exceptionRule.expectMessage("Number must be between 1 and 10");
         IntegerToRoman.convert(0);
     }
     
     @Test
     public void testConvertWithNegative() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 6");
+        exceptionRule.expectMessage("Number must be between 1 and 10");
         IntegerToRoman.convert(-1);
     }
     
     @Test
     public void testConvertWithLargeNumber() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 6");
-        IntegerToRoman.convert(7);
+        exceptionRule.expectMessage("Number must be between 1 and 10");
+        IntegerToRoman.convert(11);
     }
 }
