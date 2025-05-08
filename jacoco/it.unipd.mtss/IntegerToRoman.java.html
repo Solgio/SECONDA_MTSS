@@ -6,8 +6,8 @@ package it.unipd.mtss;
 <span class="fc" id="L6">public class IntegerToRoman {</span>
   public static String convert(int number) {
 <span class="fc" id="L8">    StringBuilder romanNumber = new StringBuilder();</span>
-<span class="fc bfc" id="L9" title="All 4 branches covered.">    if (number &lt; 1 || number &gt; 10) {</span>
-<span class="fc" id="L10">        throw new IllegalArgumentException(&quot;Number must be between 1 and 10&quot;);</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">    if (number &lt; 1 || number &gt; 20) {</span>
+<span class="fc" id="L10">        throw new IllegalArgumentException(&quot;Number must be between 1 and 20&quot;);</span>
     } else {
 <span class="fc" id="L12">        String[] romanSymbols = {&quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;}; </span>
 <span class="fc" id="L13">        int[] integerValues = {10, 9, 5, 4, 1};    </span>
