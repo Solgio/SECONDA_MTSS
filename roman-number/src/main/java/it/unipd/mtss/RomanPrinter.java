@@ -6,8 +6,8 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
     public static String print(int num){
-        if (num < 1 || num > 6) {
-            throw new IllegalArgumentException("Number must be between 1 and 6");
+        if (num < 1 || num > 10) {
+            throw new IllegalArgumentException("Number must be between 1 and 10");
         }
         return printAsciiArt(IntegerToRoman.convert(num));
     }
@@ -15,12 +15,12 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-                 // I        V
-                 {"  ___ ", " __     __"},
-                 {" |_ _|", " \\ \\   / /"},
-                 {"  | | ", "  \\ \\ / / "},
-                 {"  | | ", "   \\ V /  "},
-                 {" |___|", "    \\_/   "}     
+            // I        V                 X
+            {"  ___ ", " __     __", " __    __"},
+            {" |_ _|", " \\ \\   / /", " \\ \\  / /"},
+            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / "},
+            {"  | | ", "   \\ V /  ", "  / /\\ \\ "},
+            {" |___|", "    \\_/   ", " /_/  \\_\\"},
         };
 
         for (int i = 0; i < 5; i++) {
@@ -29,6 +29,8 @@ public class RomanPrinter {
                     asciiArt.append(ascii[i][0]);
                 } else if (r == 'V') {
                     asciiArt.append(ascii[i][1]);
+                } else if (r == 'X') {
+                    asciiArt.append(ascii[i][2]);
                 }
             }
             asciiArt.append("\n");
