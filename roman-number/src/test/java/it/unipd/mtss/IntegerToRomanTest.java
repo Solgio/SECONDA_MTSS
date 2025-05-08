@@ -58,6 +58,11 @@ public class IntegerToRomanTest {
         expectedOutcome[12] = "XC";
         expectedOutcome[13] = "XCV";
         expectedOutcome[14] = "C";
+        expectedOutcome[15] = "CCLXVII";
+        expectedOutcome[16] = "CCCLXIX";
+        expectedOutcome[17] = "CCCXC";
+        expectedOutcome[18] = "CDXC";
+        expectedOutcome[19] = "D";
 
         //ACT
         String[] actualOutcome = new String[20];
@@ -76,13 +81,15 @@ public class IntegerToRomanTest {
         actualOutcome[12] = R.convert(90);
         actualOutcome[13] = R.convert(95);
         actualOutcome[14] = R.convert(100);
-        actualOutcome[15] = R.convert(150);
-        actualOutcome[16] = R.convert(200);
-        actualOutcome[17] = R.convert(250);
-        actualOutcome[18] = R.convert(300);
+        actualOutcome[15] = R.convert(267);
+        actualOutcome[16] = R.convert(369);
+        actualOutcome[17] = R.convert(390);
+        actualOutcome[18] = R.convert(490);
         actualOutcome[19] = R.convert(500);
+
+        
         //ASSERT
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 20; i++) {
             assertEquals(expectedOutcome[i], actualOutcome[i]);
         }
     }
