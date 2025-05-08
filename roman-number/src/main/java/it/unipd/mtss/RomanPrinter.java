@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class RomanPrinter {
     public static String print(int num){
-        if (num < 1 || num > 500) {
-            throw new IllegalArgumentException("Number must be between 1 and 500");
+        if (num < 1 || num > 1000) {
+            throw new IllegalArgumentException("Number must be between 1 and 1000");
         }
         return printAsciiArt(IntegerToRoman.convert(num));
     }
@@ -23,6 +23,7 @@ public class RomanPrinter {
         ROMAN_CHAR_INDICES.put('L', 3);
         ROMAN_CHAR_INDICES.put('C', 4);
         ROMAN_CHAR_INDICES.put('D', 5);
+        ROMAN_CHAR_INDICES.put('M', 6);
     };
 
 
@@ -30,12 +31,12 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-                // I              V            X            L         C          D 
-            {"  ___ ", " __     __", " __    __", "  _     ", "   ____ ", "  ____  "},
-            {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    ", "  / ___|", " |  _ \\ "},
-            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    ", " | |    ", " | | | |"},
-            {"  | | ", "   \\ V /  ", "  / /\\ \\ ", " | |___ ", " | |___ ", " | |_| |"},
-            {" |___|", "    \\_/   ", " /_/  \\_\\", " |_____|", "  \\____|", " |____/ "},
+              // I              V            X            L         C          D            M 
+            {"  ___ ", " __     __", " __    __", "  _     ", "   ____ ", "  ____  ", "  __  __ "},
+            {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    ", "  / ___|", " |  _ \\ ", " |  \\/  |"},
+            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    ", " | |    ", " | | | |", " | |\\/| |"},
+            {"  | | ", "   \\ V /  ", "  / /\\ \\ ", " | |___ ", " | |___ ", " | |_| |", " | |  | |"},
+            {" |___|", "    \\_/   ", " /_/  \\_\\", " |_____|", "  \\____|", " |____/ ", " |_|  |_|"},
         };
 
         for (int i = 0; i < 5; i++) {
