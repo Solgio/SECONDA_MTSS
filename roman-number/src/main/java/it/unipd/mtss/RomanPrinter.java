@@ -6,8 +6,8 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
     public static String print(int num){
-        if (num < 1 || num > 20) {
-            throw new IllegalArgumentException("Number must be between 1 and 20");
+        if (num < 1 || num > 50) {
+            throw new IllegalArgumentException("Number must be between 1 and 50");
         }
         return printAsciiArt(IntegerToRoman.convert(num));
     }
