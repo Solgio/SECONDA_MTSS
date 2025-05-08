@@ -6,11 +6,11 @@ package it.unipd.mtss;
 <span class="fc" id="L6">public class IntegerToRoman {</span>
   public static String convert(int number) {
 <span class="fc" id="L8">    StringBuilder romanNumber = new StringBuilder();</span>
-<span class="fc bfc" id="L9" title="All 4 branches covered.">    if (number &lt; 1 || number &gt; 500) {</span>
-<span class="fc" id="L10">        throw new IllegalArgumentException(&quot;Number must be between 1 and 500&quot;);</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">    if (number &lt; 1 || number &gt; 1000) {</span>
+<span class="fc" id="L10">        throw new IllegalArgumentException(&quot;Number must be between 1 and 1000&quot;);</span>
     } else {
-<span class="fc" id="L12">        String[] romanSymbols = {&quot;D&quot;,&quot;CD&quot;,&quot;C&quot;,&quot;XC&quot;,&quot;L&quot;,&quot;XL&quot;,&quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;}; </span>
-<span class="fc" id="L13">        int[] integerValues = {500,400,100,90,50,40,10, 9, 5, 4, 1};    </span>
+<span class="fc" id="L12">        String[] romanSymbols = {&quot;M&quot;,&quot;CM&quot;,&quot;D&quot;,&quot;CD&quot;,&quot;C&quot;,&quot;XC&quot;,&quot;L&quot;,&quot;XL&quot;,&quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;}; </span>
+<span class="fc" id="L13">        int[] integerValues = {1000,900,500,400,100,90,50,40,10, 9, 5, 4, 1};    </span>
 <span class="fc bfc" id="L14" title="All 2 branches covered.">        for (int i = 0; i &lt; integerValues.length; i++) {</span>
 <span class="fc bfc" id="L15" title="All 2 branches covered.">          while (number &gt;= integerValues[i]) {</span>
 <span class="fc" id="L16">              romanNumber.append(romanSymbols[i]);</span>
