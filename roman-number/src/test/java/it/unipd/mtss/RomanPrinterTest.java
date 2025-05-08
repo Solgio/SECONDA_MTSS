@@ -91,6 +91,63 @@ public class RomanPrinterTest {
         assertEquals(expected, result);
     }
 
+    
+    @Test
+    public void shouldPrintVII_WhenInputIs7() {
+        //ARRANGE
+        String expected = " __     __  ___   ___ \n" +
+                         " \\ \\   / / |_ _| |_ _|\n" +
+                         "  \\ \\ / /   | |   | | \n" +
+                         "   \\ V /    | |   | | \n" +
+                         "    \\_/    |___| |___|\n";
+        //ACT
+        String result = RomanPrinter.print(7);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintVIII_WhenInputIs8() {
+        //ARRANGE
+        String expected = " __     __  ___   ___   ___ \n" +
+                         " \\ \\   / / |_ _| |_ _| |_ _|\n" +
+                         "  \\ \\ / /   | |   | |   | | \n" +
+                         "   \\ V /    | |   | |   | | \n" +
+                         "    \\_/    |___| |___| |___|\n";
+        //ACT
+        String result = RomanPrinter.print(8);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintIX_WhenInputIs9() {
+        //ARRANGE
+        String expected = "  ___  __    __\n" +
+                         " |_ _| \\ \\  / /\n" +
+                         "  | |   \\ \\/ / \n" +
+                         "  | |   / /\\ \\ \n" +
+                         " |___| /_/  \\_\\\n";
+        //ACT
+        String result = RomanPrinter.print(9);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintX_WhenInputIs10() {
+        //ARRANGE
+        String expected = " __    __\n" +
+                        " \\ \\  / /\n" +
+                        "  \\ \\/ / \n" +
+                        "  / /\\ \\ \n" +
+                        " /_/  \\_\\\n";
+        //ACT
+        String result = RomanPrinter.print(10);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsZero() {
         RomanPrinter.print(0);
