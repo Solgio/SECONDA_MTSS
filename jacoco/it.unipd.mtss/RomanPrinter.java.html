@@ -3,38 +3,44 @@
 // LORENZO SOLIGO 2101057
 ////////////////////////////////////////////////////////////////////
 package it.unipd.mtss;
-<span class="fc" id="L6">public class RomanPrinter {</span>
+
+<span class="fc" id="L7">public class RomanPrinter {</span>
     public static String print(int num){
-<span class="fc" id="L8">        return printAsciiArt(IntegerToRoman.convert(num));</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">        if (num &lt; 1 || num &gt; 3) {</span>
+<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Number must be between 1 and 3&quot;);</span>
+        }
+<span class="fc" id="L12">        return printAsciiArt(IntegerToRoman.convert(num));</span>
     }
     private static String printAsciiArt(String romanNumber){
-<span class="fc" id="L11">        StringBuilder asciiArt = new StringBuilder();</span>
-<span class="pc bpc" id="L12" title="1 of 4 branches missed.">        switch (romanNumber) {</span>
-            case &quot;I&quot;:
-<span class="fc" id="L14">                asciiArt.append(&quot;  ___ \n&quot;);</span>
-<span class="fc" id="L15">                asciiArt.append(&quot; |_ _|\n&quot;);</span>
-<span class="fc" id="L16">                asciiArt.append(&quot;  | | \n&quot;);</span>
-<span class="fc" id="L17">                asciiArt.append(&quot;  | | \n&quot;);</span>
-<span class="fc" id="L18">                asciiArt.append(&quot; |___|\n&quot;);</span>
-<span class="fc" id="L19">                break;</span>
-            case &quot;II&quot;:
-<span class="fc" id="L21">                asciiArt.append(&quot;  ___   ___ \n&quot;);</span>
-<span class="fc" id="L22">                asciiArt.append(&quot; |_ _| |_ _|\n&quot;);</span>
-<span class="fc" id="L23">                asciiArt.append(&quot;  | |   | | \n&quot;);</span>
-<span class="fc" id="L24">                asciiArt.append(&quot;  | |   | | \n&quot;);</span>
-<span class="fc" id="L25">                asciiArt.append(&quot; |___| |___|\n&quot;);</span>
-<span class="fc" id="L26">                break;</span>
-            case &quot;III&quot;:
-<span class="fc" id="L28">                asciiArt.append(&quot;  ___   ___   ___ \n&quot;);</span>
-<span class="fc" id="L29">                asciiArt.append(&quot; |_ _| |_ _| |_ _|\n&quot;);</span>
-<span class="fc" id="L30">                asciiArt.append(&quot;  | |   | |   | | \n&quot;);</span>
-<span class="fc" id="L31">                asciiArt.append(&quot;  | |   | |   | | \n&quot;);</span>
-<span class="fc" id="L32">                asciiArt.append(&quot; |___| |___| |___|\n&quot;);</span>
-<span class="fc" id="L33">                break;</span>
-            default:
-<span class="nc" id="L35">                throw new IllegalArgumentException(&quot;Invalid Roman numeral: &quot; + romanNumber);</span>
+
+<span class="fc" id="L16">        StringBuilder asciiArt = new StringBuilder();</span>
+<span class="fc" id="L17">        String[][] asciiI = {</span>
+
+            {
+                &quot;  ___ &quot;      // I
+            },
+            {
+                &quot; |_ _|&quot;
+            },
+            {   
+                &quot;  | | &quot;
+            },
+            {
+                &quot;  | | &quot;
+            },
+            {
+                &quot; |___|&quot;
+            }
+        };
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            for( int j = 0; j &lt; romanNumber.length(); j++) {</span>
+<span class="fc" id="L38">                asciiArt.append(asciiI[i][0]);</span>
+            }
+<span class="fc" id="L40">            asciiArt.append(&quot;\n&quot;);</span>
         }
-<span class="fc" id="L37">        return asciiArt.toString();</span>
+<span class="fc" id="L42">        return asciiArt.toString();</span>
     }
+    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
