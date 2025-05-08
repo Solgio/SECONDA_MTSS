@@ -248,14 +248,39 @@ public class RomanPrinterTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void shouldPrintCMXCIX_WhenInputIs999(){
+        String expected= 
+                        "   ____   __  __  __    __   ____   ___  __    __\n"+
+                         "  / ___| |  \\/  | \\ \\  / /  / ___| |_ _| \\ \\  / /\n"+
+                         " | |     | |\\/| |  \\ \\/ /  | |      | |   \\ \\/ / \n"+
+                         " | |___  | |  | |  / /\\ \\  | |___   | |   / /\\ \\ \n"+
+                         "  \\____| |_|  |_| /_/  \\_\\  \\____| |___| /_/  \\_\\\n";
+        String result = RomanPrinter.print(999);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintM_WhenInputIs1000(){
+        String expected= 
+                        "  __  __ \n"+
+                         " |  \\/  |\n"+
+                         " | |\\/| |\n"+
+                         " | |  | |\n"+
+                         " |_|  |_|\n";
+        String result = RomanPrinter.print(1000);
+        assertEquals(expected, result);
+    }
+
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsZero() {
         RomanPrinter.print(0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowException_WhenInputIsGreaterThan500() {
-        RomanPrinter.print(501);
+    public void shouldThrowException_WhenInputIsGreaterThan1000() {
+        RomanPrinter.print(1001);
     }
 
      @Test

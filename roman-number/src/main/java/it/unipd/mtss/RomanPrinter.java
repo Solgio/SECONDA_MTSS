@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class RomanPrinter {
     public static String print(int num){
-        if (num < 1 || num > 500) {
-            throw new IllegalArgumentException("Number must be between 1 and 500");
+        if (num < 1 || num > 1000) {
+            throw new IllegalArgumentException("Number must be between 1 and 1000");
         }
         return printAsciiArt(IntegerToRoman.convert(num));
     }
