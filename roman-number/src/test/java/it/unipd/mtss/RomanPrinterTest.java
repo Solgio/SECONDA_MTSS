@@ -148,14 +148,57 @@ public class RomanPrinterTest {
         assertEquals(expected, result);
     }
 
+
+    @Test
+    public void shouldPrintXV_WhenInputIs15() {
+        //ARRANGE
+        String expected = " __    __ __     __\n" +
+                          " \\ \\  / / \\ \\   / /\n" +
+                          "  \\ \\/ /   \\ \\ / / \n" +
+                          "  / /\\ \\    \\ V /  \n" +
+                          " /_/  \\_\\    \\_/   \n";
+        //ACT
+        String result = RomanPrinter.print(15);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintIXX_WhenInputIs19() {
+        //ARRANGE
+       String expected = " __    __  ___  __    __\n" +
+        " \\ \\  / / |_ _| \\ \\  / /\n" +
+        "  \\ \\/ /   | |   \\ \\/ / \n" +
+        "  / /\\ \\   | |   / /\\ \\ \n" +
+        " /_/  \\_\\ |___| /_/  \\_\\\n";
+        //ACT
+        String result = RomanPrinter.print(19);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintXX_WhenInputIs20() {
+        //ARRANGE
+        String expected = " __    __ __    __\n" +
+        " \\ \\  / / \\ \\  / /\n" +
+        "  \\ \\/ /   \\ \\/ / \n" +
+        "  / /\\ \\   / /\\ \\ \n" +
+        " /_/  \\_\\ /_/  \\_\\\n";
+        //ACT
+        String result=RomanPrinter.print(20);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsZero() {
         RomanPrinter.print(0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowException_WhenInputIsGreaterThan10() {
-        RomanPrinter.print(11);
+    public void shouldThrowException_WhenInputIsGreaterThan20() {
+        RomanPrinter.print(21);
     }
 
      @Test
