@@ -97,8 +97,8 @@ public class RomanPrinterTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowException_WhenInputIsGreaterThan4() {
-        RomanPrinter.print(4);
+    public void shouldThrowException_WhenInputIsGreaterThan6() {
+        RomanPrinter.print(7);
     }
 
      @Test
