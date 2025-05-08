@@ -37,7 +37,7 @@ public class IntegerToRomanTest {
     public void testConvertAbove10(){
         IntegerToRoman R=new IntegerToRoman();
         //ARRANGE
-        String[] expectedOutcome = new String[15];
+        String[] expectedOutcome = new String[20];
         expectedOutcome[0] = "XV";
         expectedOutcome[1] = "XVI";
         expectedOutcome[2] = "XIX";
@@ -53,9 +53,14 @@ public class IntegerToRomanTest {
         expectedOutcome[12] = "XC";
         expectedOutcome[13] = "XCV";
         expectedOutcome[14] = "C";
+        expectedOutcome[10] = "LXV";
+        expectedOutcome[11] = "LXXX";
+        expectedOutcome[12] = "XC";
+        expectedOutcome[13] = "XCV";
+        expectedOutcome[14] = "C";
 
         //ACT
-        String[] actualOutcome = new String[15];
+        String[] actualOutcome = new String[20];
         actualOutcome[0] = R.convert(15);
         actualOutcome[1] = R.convert(16);
         actualOutcome[2] = R.convert(19);
@@ -71,6 +76,11 @@ public class IntegerToRomanTest {
         actualOutcome[12] = R.convert(90);
         actualOutcome[13] = R.convert(95);
         actualOutcome[14] = R.convert(100);
+        actualOutcome[15] = R.convert(150);
+        actualOutcome[16] = R.convert(200);
+        actualOutcome[17] = R.convert(250);
+        actualOutcome[18] = R.convert(300);
+        actualOutcome[19] = R.convert(500);
         //ASSERT
         for (int i = 0; i < 15; i++) {
             assertEquals(expectedOutcome[i], actualOutcome[i]);
@@ -83,21 +93,21 @@ public class IntegerToRomanTest {
     @Test
     public void testConvertWithZero() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 100");
+        exceptionRule.expectMessage("Number must be between 1 and 500");
         IntegerToRoman.convert(0);
     }
     
     @Test
     public void testConvertWithNegative() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 100");
+        exceptionRule.expectMessage("Number must be between 1 and 500");
         IntegerToRoman.convert(-1);
     }
     
     @Test
     public void testConvertWithLargeNumber() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Number must be between 1 and 100");
-        IntegerToRoman.convert(101);
+        exceptionRule.expectMessage("Number must be between 1 and 500");
+        IntegerToRoman.convert(501);
     }
 }
