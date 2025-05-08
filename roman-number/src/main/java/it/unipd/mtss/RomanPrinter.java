@@ -21,7 +21,7 @@ public class RomanPrinter {
             {"  | | ", "  \\ \\ / / ", "  \\ \\/ / "},
             {"  | | ", "   \\ V /  ", "  / /\\ \\ "},
             {" |___|", "    \\_/   ", " /_/  \\_\\"},
-        };
+        }; 
 
         for (int i = 0; i < 5; i++) {
             for (char r : romanNumber.toCharArray()) {
