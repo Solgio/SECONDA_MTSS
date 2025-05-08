@@ -23,6 +23,7 @@ public class RomanPrinter {
         ROMAN_CHAR_INDICES.put('L', 3);
         ROMAN_CHAR_INDICES.put('C', 4);
         ROMAN_CHAR_INDICES.put('D', 5);
+        ROMAN_CHAR_INDICES.put('M', 6);
     };
 
 
@@ -30,7 +31,7 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-              // I              V            X            L         C          D            M
+              // I              V            X            L         C          D            M 
             {"  ___ ", " __     __", " __    __", "  _     ", "   ____ ", "  ____  ", "  __  __ "},
             {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    ", "  / ___|", " |  _ \\ ", " |  \\/  |"},
             {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    ", " | |    ", " | | | |", " | |\\/| |"},
