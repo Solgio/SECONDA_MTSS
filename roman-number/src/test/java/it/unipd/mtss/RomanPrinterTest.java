@@ -49,14 +49,56 @@ public class RomanPrinterTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void shouldPrintIV_WhenInputIs4() {
+        //ARRANGE
+        String expected = "  ___  __     __\n" +
+                         " |_ _| \\ \\   / /\n" +
+                         "  | |   \\ \\ / / \n" +
+                         "  | |    \\ V /  \n" +
+                         " |___|    \\_/   \n";
+        //ACT
+        String result = RomanPrinter.print(4);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintV_WhenInputIs5() {
+        //ARRANGE
+        String expected = " __     __\n" +
+                         " \\ \\   / /\n" +
+                         "  \\ \\ / / \n" +
+                         "   \\ V /  \n" +
+                         "    \\_/   \n";
+        //ACT
+        String result = RomanPrinter.print(5);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void shouldPrintVI_WhenInputIs6() {
+        //ARRANGE
+        String expected = " __     __  ___ \n" +
+                         " \\ \\   / / |_ _|\n" +
+                         "  \\ \\ / /   | | \n" +
+                         "   \\ V /    | | \n" +
+                         "    \\_/    |___|\n";
+        //ACT
+        String result = RomanPrinter.print(6);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsZero() {
         RomanPrinter.print(0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowException_WhenInputIsGreaterThan4() {
-        RomanPrinter.print(4);
+    public void shouldThrowException_WhenInputIsGreaterThan6() {
+        RomanPrinter.print(7);
     }
 
      @Test
