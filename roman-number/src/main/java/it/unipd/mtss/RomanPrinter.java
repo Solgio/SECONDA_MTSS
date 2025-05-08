@@ -34,7 +34,7 @@ public class RomanPrinter {
                 } else if (r == 'L') {
                     asciiArt.append(ascii[i][3]);
                 } else if (r == 'C') {
-                    asciiArt.append(ascii[i][4]);
+                    asciiArt.append(ascii[i][4]); 
                 }
             }
             asciiArt.append("\n");
