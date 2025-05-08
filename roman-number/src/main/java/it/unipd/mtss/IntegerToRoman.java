@@ -10,7 +10,7 @@ public class IntegerToRoman {
     throw new IllegalArgumentException("Number must be between 1 and 6");
 }
 else {
-  if(number <= 3 && number >=1){
+  if(number <= 3){
     for (int i = 0; i < number; i++) {
         romanNumber.append("I"); 
       }}
