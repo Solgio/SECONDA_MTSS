@@ -3,21 +3,20 @@
 // LORENZO SOLIGO 2101057
 ////////////////////////////////////////////////////////////////////
 package it.unipd.mtss;
-
-<span class="fc" id="L7">public class IntegerToRoman {</span>
+<span class="fc" id="L6">public class IntegerToRoman {</span>
   public static String convert(int number){
-<span class="fc" id="L9">  String c =&quot;I&quot;;</span>
-<span class="fc bfc" id="L10" title="All 4 branches covered.">  if (number &lt; 1 || number &gt; 3) {</span>
-<span class="fc" id="L11">    throw new IllegalArgumentException(&quot;Number must be between 1 and 3&quot;);</span>
+<span class="fc" id="L8">  String c =&quot;I&quot;;</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">  if (number &lt; 1 || number &gt; 3) {</span>
+<span class="fc" id="L10">    throw new IllegalArgumentException(&quot;Number must be between 1 and 3&quot;);</span>
 }
-<span class="fc bfc" id="L13" title="All 2 branches covered.">    if (number == 1) {</span>
-<span class="fc" id="L14">        c = &quot;I&quot;;</span>
-<span class="fc bfc" id="L15" title="All 2 branches covered.">    } else if (number == 2) {</span>
-<span class="fc" id="L16">        c = &quot;II&quot;;</span>
-<span class="pc bpc" id="L17" title="1 of 2 branches missed.">    } else if (number == 3) {</span>
-<span class="fc" id="L18">        c = &quot;III&quot;;</span>
+<span class="fc bfc" id="L12" title="All 2 branches covered.">    if (number == 1) {</span>
+<span class="fc" id="L13">        c = &quot;I&quot;;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">    } else if (number == 2) {</span>
+<span class="fc" id="L15">        c = &quot;II&quot;;</span>
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">    } else if (number == 3) {</span>
+<span class="fc" id="L17">        c = &quot;III&quot;;</span>
     }
-<span class="fc" id="L20">  return c;</span>
+<span class="fc" id="L19">  return c;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
