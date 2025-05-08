@@ -6,40 +6,34 @@ package it.unipd.mtss;
 
 <span class="fc" id="L7">public class RomanPrinter {</span>
     public static String print(int num){
-<span class="fc bfc" id="L9" title="All 4 branches covered.">        if (num &lt; 1 || num &gt; 3) {</span>
-<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Number must be between 1 and 3&quot;);</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">        if (num &lt; 1 || num &gt; 6) {</span>
+<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Number must be between 1 and 6&quot;);</span>
         }
 <span class="fc" id="L12">        return printAsciiArt(IntegerToRoman.convert(num));</span>
     }
     private static String printAsciiArt(String romanNumber){
 
 <span class="fc" id="L16">        StringBuilder asciiArt = new StringBuilder();</span>
-<span class="fc" id="L17">        String[][] asciiI = {</span>
-
-            {
-                &quot;  ___ &quot;      // I
-            },
-            {
-                &quot; |_ _|&quot;
-            },
-            {   
-                &quot;  | | &quot;
-            },
-            {
-                &quot;  | | &quot;
-            },
-            {
-                &quot; |___|&quot;
-            }
+<span class="fc" id="L17">        String[][] ascii = {</span>
+                 // I        V
+                 {&quot;  ___ &quot;, &quot; __     __&quot;},
+                 {&quot; |_ _|&quot;, &quot; \\ \\   / /&quot;},
+                 {&quot;  | | &quot;, &quot;  \\ \\ / / &quot;},
+                 {&quot;  | | &quot;, &quot;   \\ V /  &quot;},
+                 {&quot; |___|&quot;, &quot;    \\_/   &quot;}     
         };
 
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
-<span class="fc bfc" id="L37" title="All 2 branches covered.">            for( int j = 0; j &lt; romanNumber.length(); j++) {</span>
-<span class="fc" id="L38">                asciiArt.append(asciiI[i][0]);</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            for (char r : romanNumber.toCharArray()) {</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">                if (r == 'I') {</span>
+<span class="fc" id="L29">                    asciiArt.append(ascii[i][0]);</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">                } else if (r == 'V') {</span>
+<span class="fc" id="L31">                    asciiArt.append(ascii[i][1]);</span>
+                }
             }
-<span class="fc" id="L40">            asciiArt.append(&quot;\n&quot;);</span>
+<span class="fc" id="L34">            asciiArt.append(&quot;\n&quot;);</span>
         }
-<span class="fc" id="L42">        return asciiArt.toString();</span>
+<span class="fc" id="L36">        return asciiArt.toString();</span>
     }
     
 }
