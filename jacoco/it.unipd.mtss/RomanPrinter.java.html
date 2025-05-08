@@ -4,41 +4,49 @@
 ////////////////////////////////////////////////////////////////////
 package it.unipd.mtss;
 
-<span class="fc" id="L7">public class RomanPrinter {</span>
+import java.util.HashMap;
+import java.util.Map;
+
+<span class="fc" id="L10">public class RomanPrinter {</span>
     public static String print(int num){
-<span class="fc bfc" id="L9" title="All 4 branches covered.">        if (num &lt; 1 || num &gt; 50) {</span>
-<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Number must be between 1 and 50&quot;);</span>
+<span class="fc bfc" id="L12" title="All 4 branches covered.">        if (num &lt; 1 || num &gt; 100) {</span>
+<span class="fc" id="L13">            throw new IllegalArgumentException(&quot;Number must be between 1 and 100&quot;);</span>
         }
-<span class="fc" id="L12">        return printAsciiArt(IntegerToRoman.convert(num));</span>
+<span class="fc" id="L15">        return printAsciiArt(IntegerToRoman.convert(num));</span>
     }
+
+<span class="fc" id="L18">    private static final Map&lt;Character, Integer&gt; ROMAN_CHAR_INDICES = new HashMap&lt;&gt;();</span>
+    static {
+<span class="fc" id="L20">        ROMAN_CHAR_INDICES.put('I', 0);</span>
+<span class="fc" id="L21">        ROMAN_CHAR_INDICES.put('V', 1);</span>
+<span class="fc" id="L22">        ROMAN_CHAR_INDICES.put('X', 2);</span>
+<span class="fc" id="L23">        ROMAN_CHAR_INDICES.put('L', 3);</span>
+<span class="fc" id="L24">        ROMAN_CHAR_INDICES.put('C', 4);</span>
+<span class="fc" id="L25">    };</span>
+
+
     private static String printAsciiArt(String romanNumber){
 
-<span class="fc" id="L16">        StringBuilder asciiArt = new StringBuilder();</span>
-<span class="fc" id="L17">        String[][] ascii = {</span>
-            // I              V            X            L 
-            {&quot;  ___ &quot;, &quot; __     __&quot;, &quot; __    __&quot;, &quot;  _     &quot;},
-            {&quot; |_ _|&quot;, &quot; \\ \\   / /&quot;, &quot; \\ \\  / /&quot;, &quot; | |    &quot;},
-            {&quot;  | | &quot;, &quot;  \\ \\ / / &quot;, &quot;  \\ \\/ / &quot;, &quot; | |    &quot;},
-            {&quot;  | | &quot;, &quot;   \\ V /  &quot;, &quot;  / /\\ \\ &quot;, &quot; | |___ &quot;},
-            {&quot; |___|&quot;, &quot;    \\_/   &quot;, &quot; /_/  \\_\\&quot;, &quot; |_____|&quot;},
+<span class="fc" id="L30">        StringBuilder asciiArt = new StringBuilder();</span>
+<span class="fc" id="L31">        String[][] ascii = {</span>
+                // I              V            X            L         C
+                {&quot;  ___ &quot;, &quot; __     __&quot;, &quot; __    __&quot;, &quot;  _     &quot;, &quot;   ____ &quot;},
+                {&quot; |_ _|&quot;, &quot; \\ \\   / /&quot;, &quot; \\ \\  / /&quot;, &quot; | |    &quot;, &quot;  / ___|&quot;},
+                {&quot;  | | &quot;, &quot;  \\ \\ / / &quot;, &quot;  \\ \\/ / &quot;, &quot; | |    &quot;, &quot; | |    &quot;},
+                {&quot;  | | &quot;, &quot;   \\ V /  &quot;, &quot;  / /\\ \\ &quot;, &quot; | |___ &quot;, &quot; | |___ &quot;},
+                {&quot; |___|&quot;, &quot;    \\_/   &quot;, &quot; /_/  \\_\\&quot;, &quot; |_____|&quot;, &quot;  \\____|&quot;},
         };
 
-<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">            for (char r : romanNumber.toCharArray()) {</span>
-<span class="fc bfc" id="L28" title="All 2 branches covered.">                if (r == 'I') {</span>
-<span class="fc" id="L29">                    asciiArt.append(ascii[i][0]);</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">                } else if (r == 'V') {</span>
-<span class="fc" id="L31">                    asciiArt.append(ascii[i][1]);</span>
-<span class="fc bfc" id="L32" title="All 2 branches covered.">                } else if (r == 'X') {</span>
-<span class="fc" id="L33">                    asciiArt.append(ascii[i][2]);</span>
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">                } else if (r == 'L') {</span>
-<span class="fc" id="L35">                    asciiArt.append(ascii[i][3]);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (int i = 0; i &lt; 5; i++) {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            for (char r : romanNumber.toCharArray()) {</span>
+<span class="fc" id="L42">                Integer index = ROMAN_CHAR_INDICES.get(r);</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">                if (index != null) {</span>
+<span class="fc" id="L44">                    asciiArt.append(ascii[i][index]);</span>
                 }
             }
-<span class="fc" id="L38">            asciiArt.append(&quot;\n&quot;);</span>
+<span class="fc" id="L47">            asciiArt.append(&quot;\n&quot;);  // Always add newline after each line</span>
         }
-<span class="fc" id="L40">        return asciiArt.toString();</span>
+<span class="fc" id="L49">        return asciiArt.toString();</span>
     }
-    
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
