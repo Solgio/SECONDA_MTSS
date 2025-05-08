@@ -86,17 +86,16 @@ public class IntegerToRomanTest {
         actualOutcome[12] = R.convert(90);
         actualOutcome[13] = R.convert(95);
         actualOutcome[14] = R.convert(100);
-        actualOutcome[15] = R.convert(150);
-        actualOutcome[16] = R.convert(200);
-        actualOutcome[17] = R.convert(250);
-        actualOutcome[18] = R.convert(300);
+        actualOutcome[15] = R.convert(267);
+        actualOutcome[16] = R.convert(369);
+        actualOutcome[17] = R.convert(390);
+        actualOutcome[18] = R.convert(490);
         actualOutcome[19] = R.convert(500);
         actualOutcome[20] = R.convert(567);
         actualOutcome[21] = R.convert(620);
         actualOutcome[22] = R.convert(895);
-        actualOutcome[23] = R.convert(999);        
+        actualOutcome[23] = R.convert(999);
         actualOutcome[24] = R.convert(1000);
-
         //ASSERT
         for (int i = 0; i < 25; i++) {
             assertEquals(expectedOutcome[i], actualOutcome[i]);
