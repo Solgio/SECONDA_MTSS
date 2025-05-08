@@ -1,0 +1,40 @@
+name: Convert/Print Issue Form
+description: File a Convert or Print feature report.
+title: "[C/P Form]: "
+labels: ["enhancement", "triage"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this Convert/Print feature report!
+  - type: dropdown
+    id: convert_print
+    attributes:
+      label: Feature Type
+      description: What type of modification are you requesting?
+      options:
+        - Convert
+        - Print
+    validations:
+      required: true
+  - type: dropdown
+    id: number
+    attributes:
+      label: How many numbers will the code support after this issue?
+      options:
+        - 3
+        - 6
+        - 10
+        - 20
+        - 50
+        - 100
+        - 500
+        - 1000
+  - type: textarea
+    id: specifics
+    attributes:
+      label: Specifics of Feature
+      description: The feature must follow the TDD process, so first provide the test and then continue with the implementation.
