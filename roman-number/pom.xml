@@ -9,7 +9,6 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>roman-number</name>
-  <!-- FIXME change it to the project's website -->
   <url>https://solgio.github.io/consegna</url>
 
   <properties>
@@ -145,7 +144,6 @@
       <artifactId>coveralls-maven-plugin</artifactId>
       <version>4.3.0</version>
       <configuration>
-        <!-- Use environment variable directly -->
         <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
         <jacocoReports>
           <jacocoReport>${project.basedir}/target/site/jacoco/jacoco.xml</jacocoReport>
@@ -157,9 +155,9 @@
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-site-plugin</artifactId>
-      <version>3.7.1</version>
+      <version>3.12.1</version>
       <configuration>
-          <siteUrl>https://solgio.github.io/Test</siteUrl> 
+          <siteUrl>https://solgio.github.io/Seconda_MTSS</siteUrl> 
           <!-- Use the modern Maven Fluido Skin -->
           <skin>
               <groupId>org.apache.maven.skins</groupId>
