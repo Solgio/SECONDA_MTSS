@@ -6,17 +6,21 @@ package it.unipd.mtss;
 <span class="fc" id="L6">public class IntegerToRoman {</span>
   public static String convert(int number){
 <span class="fc" id="L8">    StringBuilder romanNumber = new StringBuilder();</span>
-<span class="fc" id="L9">  String c =&quot;I&quot;;</span>
-<span class="fc bfc" id="L10" title="All 4 branches covered.">  if (number &lt; 1 || number &gt; 3) {</span>
-<span class="fc" id="L11">    throw new IllegalArgumentException(&quot;Number must be between 1 and 3&quot;);</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">  if (number &lt; 1 || number &gt; 6) {</span>
+<span class="fc" id="L10">    throw new IllegalArgumentException(&quot;Number must be between 1 and 6&quot;);</span>
 }
 else {
-<span class="fc bfc" id="L14" title="All 2 branches covered.">    for (int i = 0; i &lt; number; i++) {;</span>
-    
-<span class="fc" id="L16">        romanNumber.append(&quot;I&quot;); </span>
+<span class="pc bpc" id="L13" title="1 of 4 branches missed.">  if(number &lt;= 3 &amp;&amp; number &gt;=1){</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">    for (int i = 0; i &lt; number; i++) {</span>
+<span class="fc" id="L15">        romanNumber.append(&quot;I&quot;); </span>
       }}
-      
-<span class="fc" id="L19">      return romanNumber.toString();</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">  if (number == 4) {</span>
+<span class="fc" id="L18">    romanNumber.append(&quot;IV&quot;);}</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">  if (number == 5) {</span>
+<span class="fc" id="L20">    romanNumber.append(&quot;V&quot;);}</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">  if (number == 6) {</span>
+<span class="fc" id="L22">    romanNumber.append(&quot;VI&quot;);}</span>
   }
-}
+<span class="fc" id="L24">  return romanNumber.toString();</span>
+}}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
