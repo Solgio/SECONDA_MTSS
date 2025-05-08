@@ -30,7 +30,7 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-                // I              V            X            L         C          D
+                // I              V            X            L         C          D 
             {"  ___ ", " __     __", " __    __", "  _     ", "   ____ ", "  ____  "},
             {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    ", "  / ___|", " |  _ \\ "},
             {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    ", " | |    ", " | | | |"},
