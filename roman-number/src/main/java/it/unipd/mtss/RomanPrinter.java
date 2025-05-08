@@ -14,28 +14,22 @@ public class RomanPrinter {
     private static String printAsciiArt(String romanNumber){
 
         StringBuilder asciiArt = new StringBuilder();
-        String[][] asciiI = {
-
-            {
-                "  ___ "      // I
-            },
-            {
-                " |_ _|"
-            },
-            {   
-                "  | | "
-            },
-            {
-                "  | | "
-            },
-            {
-                " |___|"
-            }
+        String[][] ascii = {
+                 // I        V
+                 {"  ___ ", " __     __"},
+                 {" |_ _|", " \\ \\   / /"},
+                 {"  | | ", "  \\ \\ / / "},
+                 {"  | | ", "   \\ V /  "},
+                 {" |___|", "    \\_/   "}     
         };
 
         for (int i = 0; i < 5; i++) {
-            for( int j = 0; j < romanNumber.length(); j++) {
-                asciiArt.append(asciiI[i][0]);
+            for (char r : romanNumber.toCharArray()) {
+                if (r == 'I') {
+                    asciiArt.append(ascii[i][0]);
+                } else if (r == 'V') {
+                    asciiArt.append(ascii[i][1]);
+                }
             }
             asciiArt.append("\n");
         }
