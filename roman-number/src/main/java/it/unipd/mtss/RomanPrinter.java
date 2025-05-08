@@ -6,8 +6,8 @@ package it.unipd.mtss;
 
 public class RomanPrinter {
     public static String print(int num){
-        if (num < 1 || num > 20) {
-            throw new IllegalArgumentException("Number must be between 1 and 20");
+        if (num < 1 || num > 50) {
+            throw new IllegalArgumentException("Number must be between 1 and 50");
         }
         return printAsciiArt(IntegerToRoman.convert(num));
     }
@@ -15,13 +15,13 @@ public class RomanPrinter {
 
         StringBuilder asciiArt = new StringBuilder();
         String[][] ascii = {
-            // I        V                 X
-            {"  ___ ", " __     __", " __    __"},
-            {" |_ _|", " \\ \\   / /", " \\ \\  / /"},
-            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / "},
-            {"  | | ", "   \\ V /  ", "  / /\\ \\ "},
-            {" |___|", "    \\_/   ", " /_/  \\_\\"},
-        }; 
+            // I              V            X            L 
+            {"  ___ ", " __     __", " __    __", "  _     "},
+            {" |_ _|", " \\ \\   / /", " \\ \\  / /", " | |    "},
+            {"  | | ", "  \\ \\ / / ", "  \\ \\/ / ", " | |    "},
+            {"  | | ", "   \\ V /  ", "  / /\\ \\ ", " | |___ "},
+            {" |___|", "    \\_/   ", " /_/  \\_\\", " |_____|"},
+        };
 
         for (int i = 0; i < 5; i++) {
             for (char r : romanNumber.toCharArray()) {
@@ -31,6 +31,8 @@ public class RomanPrinter {
                     asciiArt.append(ascii[i][1]);
                 } else if (r == 'X') {
                     asciiArt.append(ascii[i][2]);
+                } else if (r == 'L') {
+                    asciiArt.append(ascii[i][3]);
                 }
             }
             asciiArt.append("\n");

@@ -191,14 +191,28 @@ public class RomanPrinterTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void shouldPrintL_WhenInputIs50() {
+        //ARRANGE
+        String expected = "  _     \n" +
+                         " | |    \n" +
+                         " | |    \n" +
+                         " | |___ \n" +
+                         " |_____|\n";
+        //ACT
+        String result = RomanPrinter.print(50);
+        //ASSERT
+        assertEquals(expected, result);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowException_WhenInputIsZero() {
         RomanPrinter.print(0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowException_WhenInputIsGreaterThan20() {
-        RomanPrinter.print(21);
+    public void shouldThrowException_WhenInputIsGreaterThan50() {
+        RomanPrinter.print(51);
     }
 
      @Test
