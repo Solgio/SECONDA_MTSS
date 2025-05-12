@@ -17,5 +17,5 @@ The tests cover all the lines and uses *Coveralls* to check the overall coverage
 The *Checkstyle* default values has been modified with reasonable values (50 for method lenght for example). 
 
 Devs:
-  - Lorenzo Soligo 2101057
-  - Pietro Giulio Bassi 2137999
+  - Lorenzo Soligo 2101057  RomanPrinter + Linked tests
+  - Pietro Giulio Bassi 2137999  RomanConverter + Linked tests
