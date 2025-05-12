@@ -19,3 +19,5 @@ The *Checkstyle* default values has been modified with reasonable values (50 for
 Devs:
   - Lorenzo Soligo 2101057  RomanPrinter + Linked tests
   - Pietro Giulio Bassi 2137999  RomanConverter + Linked tests
+
+The code was devided equally divided between the two of us and the idea was to make a release for every feature as real-world projects. All the branches are visible as well as the release tags, one for every new feature implemented.
