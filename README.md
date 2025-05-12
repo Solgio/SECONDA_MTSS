@@ -10,7 +10,7 @@ The second test for MTSS course. The badge are connected to the build page, the 
 
 **CheckStyle** Report: [![Checkstyle](https://img.shields.io/github/actions/workflow/status/Solgio/SECONDA_MTSS/build.yml?label=Checkstyle)](https://Solgio.github.io/SECONDA_MTSS/checkstyle.html)
 
-The project is developed using **TDD** for the two principal classes. All the tests are made using **A*rrange*A*ct*A*ssert* and following the *JUnit* standard, making sure that the tests are expressive, simple to read and compact. All this results in code that should follow the *A-Trip* and *Right Bicep* standard.
+The project is developed using **TDD** for the two principal classes. All the tests are made using *ArrangeActAssert* and following the *JUnit* standard, making sure that the tests are expressive, simple to read and compact. All this results in code that should follow the *A-Trip* and *Right Bicep* standard.
 
 The tests cover all the lines and uses *Coveralls* to check the overall coverage for the develop and main branches.
 
